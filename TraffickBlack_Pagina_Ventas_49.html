@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SISTEMA IA ESPIRITUAL — Construye tu agencia de marketing digital con IA · $49</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+  :root {
+    --purple: #8B5CF6;
+    --purple-dark: #6D28D9;
+    --purple-light: #A78BFA;
+    --cyan: #22D3EE;
+    --bg: #04010C;
+    --bg2: #070112;
+    --card: rgba(139,92,246,0.06);
+    --border: rgba(139,92,246,0.25);
+    --border-bright: rgba(139,92,246,0.6);
+    --text: #E2D9F3;
+    --muted: #9CA3AF;
+    --glow: 0 0 30px rgba(139,92,246,0.35);
+    --glow-cyan: 0 0 20px rgba(34,211,238,0.3);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', 'Arial', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(139,92,246,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139,92,246,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+  section { padding: 70px 24px; }
+
+  /* TOPBAR */
+  .topbar {
+    background: linear-gradient(90deg, var(--purple-dark), var(--purple), #06B6D4, var(--purple));
+    background-size: 300% 100%;
+    animation: shimmer 4s linear infinite;
+    color: #fff;
+    text-align: center;
+    padding: 11px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative; z-index: 10;
+  }
+  @keyframes shimmer { 0%{background-position:0% 50%} 100%{background-position:300% 50%} }
+
+  /* GRADIENT TEXT */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--purple-light), var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* BADGES */
+  .badge {
+    display: inline-block;
+    background: rgba(139,92,246,0.15);
+    border: 1px solid var(--border-bright);
+    border-radius: 50px;
+    padding: 6px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--purple-light);
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 80px 24px 60px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 700px; height: 500px;
+    background: radial-gradient(ellipse at center, rgba(109,40,217,0.3) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-headline {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 24px 0 20px;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 36px;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    backdrop-filter: blur(8px);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    border-color: var(--border-bright);
+    box-shadow: var(--glow);
+  }
+
+  /* SECTION TITLES */
+  .section-title {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .section-sub {
+    text-align: center;
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* PROBLEMS GRID */
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .problem-card {
+    background: rgba(239,68,68,0.04);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 14px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .problem-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+
+  /* VIDEO PLACEHOLDER */
+  .video-placeholder {
+    background: rgba(139,92,246,0.06);
+    border: 2px dashed var(--border-bright);
+    border-radius: 16px;
+    padding: 60px 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  /* BLOCKS */
+  .blocks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media(max-width: 640px) { .blocks-grid { grid-template-columns: 1fr; } }
+
+  .block-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .block-card:hover {
+    border-color: var(--border-bright);
+    box-shadow: var(--glow);
+  }
+
+  .block-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--purple), var(--cyan));
+  }
+
+  .block-num {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(139,92,246,0.25);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .block-time {
+    display: inline-block;
+    background: rgba(34,211,238,0.1);
+    border: 1px solid rgba(34,211,238,0.3);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 11px;
+    color: var(--cyan);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .block-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .block-result {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    background: rgba(34,211,238,0.07);
+    border-left: 3px solid var(--cyan);
+    padding: 8px 12px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: var(--cyan);
+    font-weight: 600;
+  }
+
+  /* VALUE TABLE */
+  .value-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+  }
+
+  .value-table th {
+    background: rgba(139,92,246,0.12);
+    color: var(--purple-light);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-bright);
+  }
+
+  .value-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    vertical-align: middle;
+  }
+
+  .value-table tr:last-child td { border-bottom: none; }
+
+  .value-table .price-col {
+    text-align: right;
+    color: var(--muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .value-table .total-row td {
+    background: rgba(139,92,246,0.1);
+    font-weight: 700;
+    font-size: 15px;
+    border-top: 1px solid var(--border-bright);
+  }
+
+  /* TESTIMONIALS */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  @media(max-width: 700px) { .testimonial-grid { grid-template-columns: 1fr; } }
+
+  .testimonial-img-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--glow);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .testimonial-img-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px rgba(139,92,246,0.5);
+  }
+
+  .testimonial-img-card img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+  }
+
+  /* PRICE BOX */
+  .price-box {
+    background: linear-gradient(135deg, rgba(109,40,217,0.3), rgba(6,182,212,0.15));
+    border: 1px solid var(--border-bright);
+    border-radius: 24px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: var(--glow), inset 0 0 60px rgba(109,40,217,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .price-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--purple), var(--cyan));
+  }
+
+  .price-crossed {
+    font-size: 1.5rem;
+    color: var(--muted);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .price-main {
+    font-size: clamp(3.5rem, 8vw, 5rem);
+    font-weight: 900;
+    line-height: 1;
+    margin: 8px 0;
+  }
+
+  .price-note {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 36px;
+  }
+
+  /* CTA BUTTON */
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 18px 48px;
+    border-radius: 12px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    box-shadow: 0 0 40px rgba(139,92,246,0.5);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 60px rgba(139,92,246,0.7);
+  }
+
+  .cta-secondary {
+    display: inline-block;
+    background: rgba(34,211,238,0.1);
+    color: var(--cyan);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid rgba(34,211,238,0.4);
+    transition: all 0.3s;
+  }
+
+  .cta-secondary:hover {
+    background: rgba(34,211,238,0.2);
+    box-shadow: var(--glow-cyan);
+  }
+
+  /* GUARANTEE */
+  .guarantee-box {
+    background: rgba(34,197,94,0.05);
+    border: 1px solid rgba(34,197,94,0.25);
+    border-radius: 16px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .guarantee-icon { font-size: 2.5rem; flex-shrink: 0; }
+
+  /* FAQ */
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 12px;
+  }
+
+  .faq-q {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .faq-a { font-size: 14px; color: var(--muted); }
+
+  /* UPSELL BANNER */
+  .upsell-banner {
+    background: linear-gradient(135deg, rgba(109,40,217,0.2), rgba(6,182,212,0.1));
+    border: 1px solid var(--border-bright);
+    border-radius: 20px;
+    padding: 40px 36px;
+    text-align: center;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 30px 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* RESPONSIVE */
+  @media(max-width: 640px) {
+    section { padding: 50px 20px; }
+    .price-box { padding: 36px 24px; }
+    .guarantee-box { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">⚡ ACCESO INMEDIATO · PRECIO DE LANZAMIENTO $49 USD · PAGO ÚNICO SIN MENSUALIDADES</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1 class="hero-headline">
+      Tu negocio espiritual con un sistema de IA<br>
+      <span class="gradient-text">que crea, diseña y vende por ti</span>
+    </h1>
+
+    <p class="hero-sub">
+      Construye tu propia agencia de marketing digital con IA, diseñada 100% para el mercado espiritual — sin equipo, sin conocimientos técnicos, sin depender de nadie.
+    </p>
+
+    <a href="https://pay.hotmart.com/C97216125I?off=g5vvj8ca&bid=1778698153092" class="cta-btn">
+      Quiero SISTEMA IA ESPIRITUAL por $49 →
+    </a>
+
+    <p style="margin-top:16px; color:var(--muted); font-size:13px;">Acceso inmediato · Sin mensualidades · Para siempre</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- VIDEO VSL -->
+<section style="padding: 60px 24px; background: var(--bg2);">
+  <div class="container">
+    <div class="video-placeholder">
+      <!-- Reemplazar con iframe de video cuando esté grabado -->
+      <!-- Ejemplo: <iframe width="100%" height="480" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen style="border-radius:12px;"></iframe> -->
+      <div style="font-size:3rem; margin-bottom:16px;">▶</div>
+      <p style="font-size:16px; color:var(--text); font-weight:600; margin-bottom:8px;">Video del entrenamiento · Próximamente</p>
+      <p>Aquí va el video de presentación del producto</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EL PROBLEMA -->
+<section>
+  <div class="container">
+    <div class="badge" style="margin-bottom:24px;">¿TE IDENTIFICAS?</div>
+    <h2 class="section-title">
+      Lo que le pasa a casi todo negocio espiritual<br>
+      <span class="gradient-text">que no usa IA todavía</span>
+    </h2>
+    <p class="section-sub">No es falta de talento. Es falta de sistema.</p>
+
+    <div class="problems-grid">
+      <div class="problem-card">
+        <span class="problem-icon">😩</span>
+        <div>
+          <strong style="font-size:14px;">Se te acaban las ideas de contenido</strong>
+          <p style="font-size:13px; color:var(--muted); margin-top:4px;">Abres el celular para publicar y no sabes qué decir. El tiempo pasa y no publicas nada.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <span class="problem-icon">💸</span>
+        <div>
+          <strong style="font-size:14px;">Gastas en anuncios y no conviertes</strong>
+          <p style="font-size:13px; color:var(--muted); margin-top:4px;">Pagas Meta Ads, consigues likes o te bloquean la cuenta. El dinero se va sin resultados.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <span class="problem-icon">⏰</span>
+        <div>
+          <strong style="font-size:14px;">No tienes tiempo para todo</strong>
+          <p style="font-size:13px; color:var(--muted); margin-top:4px;">Atiendes clientes, das sesiones, y encima tienes que crear contenido. No alcanza el día.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <span class="problem-icon">🤖</span>
+        <div>
+          <strong style="font-size:14px;">La IA te parece complicada</strong>
+          <p style="font-size:13px; color:var(--muted); margin-top:4px;">Escuchas de ChatGPT o Claude pero no sabes cómo aplicarlo a tu negocio espiritual concretamente.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <span class="problem-icon">📉</span>
+        <div>
+          <strong style="font-size:14px;">Mes a mes la agenda no se llena</strong>
+          <p style="font-size:13px; color:var(--muted); margin-top:4px;">Hay semanas buenas y semanas sin clientes. La inconsistencia te genera estrés e incertidumbre.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <span class="problem-icon">🔒</span>
+        <div>
+          <strong style="font-size:14px;">Meta te bloquea o restringe</strong>
+          <p style="font-size:13px; color:var(--muted); margin-top:4px;">Los temas espirituales, de bienestar o esoterismo tienen reglas específicas que pocos conocen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- LA SOLUCIÓN -->
+<section style="background: var(--bg2);">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div class="badge" style="margin-bottom:20px;">LA SOLUCIÓN</div>
+      <h2 class="section-title">
+        En 15 min tienes tu primer<br>
+        <span class="gradient-text">sistema de marketing IA activo</span>
+      </h2>
+      <p class="section-sub">
+        No necesitas saber de tecnología. Solo sigues el entrenamiento paso a paso y al final tienes todo listo.
+      </p>
+    </div>
+
+    <div class="blocks-grid">
+      <div class="block-card">
+        <div class="block-num">01</div>
+        <div class="block-time">MÓDULO 1</div>
+        <div class="block-title">Perfiles que convierten desde el primer vistazo</div>
+        <p style="font-size:13px; color:var(--muted);">Tu Fanpage de Facebook e Instagram optimizados con IA: bio que conecta con tu cliente ideal, portada diseñada y perfil configurado para que cada visita se convierta en un contacto.</p>
+        <div class="block-result">✓ Resultado: Perfiles listos + portada diseñada</div>
+      </div>
+
+      <div class="block-card">
+        <div class="block-num">02</div>
+        <div class="block-time">MÓDULO 2</div>
+        <div class="block-title">Anuncios con Andrómeda IA sin bloqueos en Meta</div>
+        <p style="font-size:13px; color:var(--muted);">Crea anuncios que no parecen anuncios con la estrategia Andrómeda IA, y pásalos por el META SHIELD antes de publicar. Tu cuenta espiritual protegida, tus anuncios convirtiendo.</p>
+        <div class="block-result">✓ Resultado: 3 anuncios escritos y filtrados</div>
+      </div>
+
+      <div class="block-card">
+        <div class="block-num">03</div>
+        <div class="block-time">MÓDULO 3</div>
+        <div class="block-title">Contenido persuasivo + diseños en Canva</div>
+        <p style="font-size:13px; color:var(--muted);">Tu agente crea los posts de Instagram con estructura TOFU-MOFU-BOFU y genera el diseño al mismo tiempo. Copy + imagen en menos de 2 minutos por post.</p>
+        <div class="block-result">✓ Resultado: 5 posts + diseños listos</div>
+      </div>
+
+      <div class="block-card">
+        <div class="block-num">04</div>
+        <div class="block-time">MÓDULO 4 + 5</div>
+        <div class="block-title">Segmentación y reactivación de tu audiencia</div>
+        <p style="font-size:13px; color:var(--muted);">Aprende a segmentar para evitar leads fríos y activa la estrategia aceleradora para revivir tu Oficina — los contactos que ya te conocen y aún no han comprado.</p>
+        <div class="block-result">✓ Resultado: Estrategia + secuencia de reactivación</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- LO QUE RECIBES -->
+<section>
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div class="badge" style="margin-bottom:20px;">INCLUYE</div>
+      <h2 class="section-title">Todo lo que obtienes hoy</h2>
+    </div>
+
+    <div class="card" style="margin-bottom:28px;">
+      <table class="value-table">
+        <tr>
+          <th>Qué incluye</th>
+          <th style="text-align:right;">Valor</th>
+        </tr>
+        <tr>
+          <td>
+            <strong>Entrenamiento grabado — 4 horas</strong><br>
+            <span style="font-size:12px; color:var(--muted);">Acceso de por vida en Hotmart · Ve a tu ritmo · Repasa cuando quieras</span>
+          </td>
+          <td class="price-col">$197</td>
+        </tr>
+        <tr>
+          <td>
+            <strong>⚡ Agentes IA especializados para el mercado espiritual</strong><br>
+            <span style="font-size:12px; color:var(--muted);">Instrucciones listas para copiar y pegar · Genera contenido, anuncios y diseños sin conocimientos técnicos</span>
+          </td>
+          <td class="price-col">$197</td>
+        </tr>
+        <tr class="total-row">
+          <td><strong>Valor total real</strong></td>
+          <td class="price-col" style="color:var(--purple-light);">$394</td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="text-align:center;">
+      <p style="font-size:1.1rem; color:var(--muted); margin-bottom:8px;">Hoy lo obtienes todo por</p>
+      <p style="font-size:3rem; font-weight:900; color:var(--cyan);">$49 USD</p>
+      <p style="font-size:13px; color:var(--muted);">Pago único · Sin mensualidades · Acceso inmediato</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TESTIMONIALES -->
+<section style="background: var(--bg2);">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div class="badge" style="margin-bottom:20px;">RESULTADOS REALES</div>
+      <h2 class="section-title">Lo que dicen quienes<br><span class="gradient-text">ya lo aplicaron</span></h2>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-img-card">
+        <img src="testimonio_1_zoom.jpeg" alt="Testimonio estudiante Orlando Sánchez">
+      </div>
+      <div class="testimonial-img-card">
+        <img src="testimonio_2_oswaldo.jpeg" alt="Testimonio estudiante Orlando Sánchez">
+      </div>
+      <div class="testimonial-img-card">
+        <img src="testimonio_3_pachamama.jpeg" alt="Testimonio estudiante Orlando Sánchez">
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRECIO + CTA PRINCIPAL -->
+<section>
+  <div class="container">
+    <div class="price-box">
+      <div class="badge" style="margin-bottom:24px;">ACCESO INMEDIATO</div>
+
+      <h2 style="font-size:1.8rem; font-weight:900; margin-bottom:8px;">
+        Activa tu primer sistema IA hoy
+      </h2>
+      <p style="color:var(--muted); margin-bottom:28px; font-size:15px;">
+        Entrenamiento completo · Agentes IA especializados · Acceso de por vida
+      </p>
+
+      <div class="price-crossed">Valor real $394</div>
+      <div class="price-main"><span class="gradient-text">$49</span></div>
+      <p class="price-note">USD · Pago único · Sin mensualidades · Acceso inmediato</p>
+
+      <a href="https://pay.hotmart.com/C97216125I?off=g5vvj8ca&bid=1778698153092" class="cta-btn" style="display:block; max-width:400px; margin:0 auto 16px; text-align:center;">
+        Sí, quiero SISTEMA IA ESPIRITUAL por $49 →
+      </a>
+
+      <p style="font-size:12px; color:var(--muted);">
+        🔒 Pago 100% seguro vía Hotmart · Tarjeta de crédito / débito · PayPal
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- UPSELL SUAVE — TRAFFICK BLACK -->
+<section style="background: var(--bg2);">
+  <div class="container">
+    <div class="upsell-banner">
+      <div class="badge" style="margin-bottom:20px;">¿QUIERES IR MÁS LEJOS?</div>
+      <h2 style="font-size:1.6rem; font-weight:900; margin-bottom:12px;">
+        SISTEMA IA ESPIRITUAL es solo el comienzo
+      </h2>
+      <p style="color:var(--muted); max-width:560px; margin:0 auto 24px; font-size:15px;">
+        Con los 2 agentes básicos vas a ver resultados. Pero en <strong style="color:var(--text);">Traffick Black IA 7.0</strong> tienes los 8 agentes completos — incluyendo META SHIELD, SEO, Embudos y tu Mentor IA — más comunidad y clases semanales con Orlando.
+      </p>
+      <a href="https://pay.hotmart.com/D104311415M?off=2on9hspg&bid=1776190408773" class="cta-secondary">
+        Conocer Traffick Black IA 7.0 · $497 →
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div style="text-align:center; margin-bottom:40px;">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+    </div>
+
+    <div style="max-width:700px; margin:0 auto;">
+      <div class="faq-item">
+        <div class="faq-q">¿Necesito saber de tecnología o programación?</div>
+        <div class="faq-a">No. Claude.ai es una plataforma de chat — como WhatsApp, pero con inteligencia artificial. Solo necesitas crear una cuenta gratis y seguir los pasos del entrenamiento. Si sabes escribir, sabes usar esto.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">¿Puedo acceder desde mi celular?</div>
+        <div class="faq-a">Sí. El entrenamiento está en Hotmart, que funciona perfectamente desde celular, tablet o computadora. Los agentes de IA también los puedes usar desde cualquier dispositivo con conexión a internet. No necesitas instalar nada.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">¿Esto funciona para mi tipo de negocio espiritual?</div>
+        <div class="faq-a">Sí. El entrenamiento cubre negocios de tarot, astrología, coaching espiritual, terapias holísticas, sanación energética, medicina alternativa, numerología y todos los servicios de bienestar y espiritualidad.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">¿Cuándo puedo acceder al entrenamiento?</div>
+        <div class="faq-a">Inmediatamente después de tu pago recibes un correo con el acceso a Hotmart Club. Entras, ves las 4 horas cuando quieras, a tu ritmo. El acceso no vence.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">¿Es diferente a Traffick Black IA 7.0?</div>
+        <div class="faq-a">Sí. SISTEMA IA ESPIRITUAL es el primer paso — 2 agentes básicos para resultados rápidos. Traffick Black IA 7.0 es el sistema completo con 8 agentes, comunidad activa y clases semanales en vivo. SISTEMA IA ESPIRITUAL es ideal si quieres empezar con inversión pequeña y confirmar que funciona antes de dar el siguiente paso.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CTA FINAL -->
+<section style="background: var(--bg2); text-align:center;">
+  <div class="container" style="padding-top:60px; padding-bottom:60px;">
+    <h2 style="font-size:clamp(1.6rem, 4vw, 2.4rem); font-weight:900; margin-bottom:16px;">
+      Empieza hoy.<br><span class="gradient-text">Tu sistema activo desde el primer día.</span>
+    </h2>
+    <p style="color:var(--muted); margin-bottom:36px; font-size:15px; max-width:500px; margin-left:auto; margin-right:auto;">
+      Cada día que no tienes un sistema de marketing con IA, tu competencia avanza. Empieza con $49.
+    </p>
+    <a href="https://pay.hotmart.com/C97216125I?off=g5vvj8ca&bid=1778698153092" class="cta-btn">
+      Quiero SISTEMA IA ESPIRITUAL por $49 →
+    </a>
+    <p style="margin-top:16px; color:var(--muted); font-size:12px;">🔒 Pago seguro · ⚡ Acceso inmediato · ✦ Acceso de por vida</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Orlando Sánchez — Traffick Black · Todos los derechos reservados</p>
+  <p style="margin-top:8px;">
+    <a href="#" style="color:var(--muted); text-decoration:none; margin:0 10px;">Términos y condiciones</a>
+    <a href="#" style="color:var(--muted); text-decoration:none; margin:0 10px;">Política de privacidad</a>
+    <a href="https://wa.me/573008712883" style="color:var(--muted); text-decoration:none; margin:0 10px;">Soporte WhatsApp</a>
+  </p>
+  <p style="margin-top:8px; font-size:11px; color:rgba(156,163,175,0.5);">
+    SISTEMA IA ESPIRITUAL es un producto digital · Hotmart · Los resultados pueden variar según el negocio y el nivel de aplicación
+  </p>
+</footer>
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/573008712883" target="_blank" rel="noopener noreferrer"
+   style="
+     position: fixed;
+     bottom: 28px;
+     right: 28px;
+     z-index: 9999;
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+     background: #25D366;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+     transition: transform 0.2s, box-shadow 0.2s;
+     text-decoration: none;
+   "
+   onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.7)'"
+   onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.5)'"
+   title="Escríbenos por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+</body>
+</html>
