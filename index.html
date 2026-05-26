@@ -509,23 +509,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- TOPBAR -->
 <div class="topbar">
-  ⏳ &nbsp;PRECIO DE LANZAMIENTO — Cierra en: <span id="countdown-timer" style="background:rgba(0,0,0,0.25); padding:2px 10px; border-radius:20px; letter-spacing:2px;">...</span>
+  ⏳ &nbsp;PRECIO DE LANZAMIENTO — Vence hoy a medianoche: <span id="countdown-timer" style="background:rgba(0,0,0,0.25); padding:2px 10px; border-radius:20px; letter-spacing:2px;">...</span>
 </div>
 <script>
 (function(){
-  var deadline = new Date('2026-06-02T23:59:59');
   function pad(n){ return n < 10 ? '0'+n : n; }
+  function getDeadline(){
+    var d = new Date();
+    d.setHours(23, 59, 59, 0);
+    return d;
+  }
   function update(){
     var now = new Date();
+    var deadline = getDeadline();
     var diff = deadline - now;
     var el = document.getElementById('countdown-timer');
     if(!el) return;
-    if(diff <= 0){ el.textContent = '¡ÚLTIMO DÍA!'; return; }
-    var d = Math.floor(diff/86400000);
-    var h = Math.floor((diff%86400000)/3600000);
+    if(diff <= 0){ el.textContent = '¡OFERTA VENCIDA!'; return; }
+    var h = Math.floor(diff/3600000);
     var m = Math.floor((diff%3600000)/60000);
     var s = Math.floor((diff%60000)/1000);
-    el.textContent = (d > 0 ? d+'d ' : '') + pad(h)+'h '+pad(m)+'m '+pad(s)+'s';
+    el.textContent = pad(h)+'h '+pad(m)+'m '+pad(s)+'s';
   }
   update();
   setInterval(update, 1000);
@@ -536,12 +540,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="container">
     <h1 class="hero-headline">
-      ¿Tu don espiritual es real pero tus clientes no llegan?<br>
-      <span class="gradient-text">Con este sistema de IA lo resuelves en una tarde — por $49</span>
+      Tu negocio espiritual con un sistema de IA<br>
+      <span class="gradient-text">que crea, diseña y vende por ti</span>
     </h1>
 
     <p class="hero-sub">
-      El mismo sistema que usan expertos en tarot, astrología y coaching espiritual para atraer clientes todos los días sin publicar horas, sin pagar diseñadores y sin entender de tecnología. Lo configuras una sola vez. Trabaja por ti mientras tú haces lo que te apasiona.
+      Construye tu propia agencia de marketing digital con IA, diseñada 100% para el mercado espiritual — sin equipo, sin conocimientos técnicos, sin depender de nadie.
     </p>
 
     <a href="https://pay.hotmart.com/C97216125I?off=g5vvj8ca&bid=1778698153092" class="cta-btn" onclick="fbq('track', 'InitiateCheckout', {content_name: 'Sistema IA Espiritual $49', value: 49, currency: 'USD'});">
@@ -737,25 +741,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="testimonial-grid">
-      <div class="testimonial-img-card" style="padding:28px; background:rgba(139,92,246,0.06); display:flex; flex-direction:column; justify-content:space-between; min-height:320px;">
-        <div>
-          <div style="color:var(--purple-light); font-size:2rem; line-height:1; margin-bottom:12px;">"</div>
-          <p style="font-size:13.5px; color:var(--muted); line-height:1.75;">
-            El cambio en mi negocio desde que inicié en IA 7.0 ha sido radical y se ha visto reflejado directamente en la facturación. Logré estabilizar los ingresos y bajar drásticamente el costo por lead. Lo más valioso fue el cambio de mentalidad — comprendí que la IA no llegó para afectar nuestros proyectos, sino para potenciarlos. Llevo ya dos años en Traffick Black y lo que Orlando y su comunidad han aportado a mi proyecto es invaluable.
-          </p>
-        </div>
-        <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border);">
-          <div style="display:flex; align-items:center; gap:10px;">
-            <div style="width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg,var(--purple),var(--cyan)); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; color:#fff; flex-shrink:0;">A</div>
-            <div>
-              <div style="font-size:13px; font-weight:700; color:#fff;">Estudiante Traffick Black</div>
-              <div style="font-size:11px; color:var(--muted);">Comunidad IA 7.0 · 2 años en el programa</div>
-            </div>
-          </div>
-          <div style="margin-top:10px;">
-            <span style="background:rgba(34,211,238,0.1); border:1px solid rgba(34,211,238,0.3); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--cyan); font-weight:700;">✓ Resultado verificado</span>
-          </div>
-        </div>
+      <div class="testimonial-img-card">
+        <img src="testimonio_1_zoom.jpeg" alt="Testimonio estudiante Orlando Sánchez">
       </div>
       <div class="testimonial-img-card">
         <img src="testimonio_2_oswaldo.jpeg" alt="Testimonio estudiante Orlando Sánchez">
